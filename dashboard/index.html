@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ZelApi Status's Stats</title>
+  <link rel="icon" href="https://raw.githubusercontent.com/hazelnuttty/Hazel-Api/main/src/icon.png" type="image/png" />
+  <link rel="stylesheet" href="/dashboard/style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+</head>
+<body class="bg-white text-gray-900 font-sans">
+  <header class="border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 py-2 text-xs text-gray-700 font-normal">
+      ZelApi Status
+      <a class="float-right text-gray-600 hover:text-gray-900" href="https://github.com/hazelnuttty" target="_blank" aria-label="GitHub link">
+        <i class="fab fa-github fa-lg"></i>
+      </a>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 py-4">
+    <!-- Statistik Utama -->
+    <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-4 overflow-x-auto scrollbar-hide">
+      <div class="card"><p id="totalApi">-</p><span>Total API</span></div>
+      <div class="card"><p>26.2K</p><span>Total Users</span></div>
+      <div class="card"><p>11.9K</p><span>Today Requests</span></div>
+      <div class="card"><p>8.5K</p><span>Request Per Day</span></div>
+      <div class="card"><p id="totalRequests">-</p><span>Total Requests</span></div>
+      <div class="card"><p id="avgResponse">-</p><span>Avg Response (ms)</span></div>
+      <div class="card"><p id="successRate">-</p><span>Success Rate</span></div>
+      <div class="card"><p id="errorRate">-</p><span>Error Rate</span></div>
+    </section>
+
+    <!-- Grafik -->
+    <section class="border border-gray-200 rounded-md p-3 bg-white shadow-sm overflow-x-auto">
+         <h2 class="font-semibold text-xs text-gray-900 mb-2">Server Latency</h2>
+         <div class="w-full min-w-[600px]">
+          <canvas id="pingChart" width="600" height="200"></canvas>
+         </div>
+    </section>
+  </main>
+
+  <script src="/dashboard/script.js"></script>
+</body>
+</html>

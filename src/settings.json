@@ -1,0 +1,607 @@
+{
+    "name": "Hazel Api's",
+    "version": "v1.0.0",
+    "description": "Simple and easy to use API.",
+    "bannerImage": "/src/banner.jpg",
+    "header": {
+        "status": "Active!"
+    },
+    "apiSettings": {
+        "creator": "Hazel",
+        "apikey": ["velin"]
+    },
+    "categories": [
+        {
+            "name": "Artificial Intelligence",
+            "items": [
+                {
+                    "name": "LuminAI",
+                    "desc": "Talk with luminai",
+                    "path": "/ai/luminai?text=",
+                    "status": "Ready",
+                    "params": {
+                        "text": "Text for luminai to respond to"
+                    }
+                },
+                {
+                    "name": "HydroMind",
+                    "desc": "See the list of supported AI models here: https://mind.hydrooo.web.id",
+                    "path": "/ai/hydromind?text=&model=",
+                    "status": "Ready",
+                    "params": {
+                        "text": "Teks atau perintah untuk chat AI",
+                        "model": "Masukan model ai"
+                    }
+                },
+                {
+                    "name": "TruepingAi",
+                    "desc": "Ai Bahasa indonesia dengan sikap yang lucu 🧸🎀",
+                    "path": "/ai/truepingai?text=",
+                    "status": "Ready",
+                    "params": {
+                        "text": "Teks atau perintah untuk chat AI"
+                    }
+                },
+                {
+                    "name": "TruecallerAi",
+                    "desc": "Ai dari truecaller yang siap membantu kamu",
+                    "path": "/ai/truecaller?text=",
+                    "status": "Ready",
+                    "params": {
+                        "text": "Teks atau perintah untuk chat AI"
+                    }
+                },
+                {
+                    "name": "Gpt Turbo",
+                    "desc": "Ai dari chatgpt",
+                    "path": "/ai/gpt-turbo?text=",
+                    "status": "Ready",
+                    "params": {
+                        "text": "Teks atau perintah untuk chat AI"
+                    }
+                },
+                {
+                    "name": "CopilotAi",
+                    "desc": "Ai dari microsoft yang siap membantu pekerjaan kamu",
+                    "path": "/ai/copilotai?text=",
+                    "status": "Ready",
+                    "params": {
+                        "text": "Teks atau perintah untuk chat AI"
+                    }
+                },
+                {
+                    "name": "OpenAi",
+                    "desc": "Ai dari OpenAi yang siap membantu semua masalah kamu",
+                    "path": "/ai/openai?text=",
+                    "status": "Ready",
+                    "params": {
+                        "text": "Teks atau perintah untuk chat AI"
+                    }
+                },
+                {
+                    "name": "Quantum Ai",
+                    "desc": "Nikmatin ai dengan performa tinggi secara gratis.",
+                    "path": "/ai/quantum?text=",
+                    "status": "Ready",
+                    "params": {
+                        "text": "Masukan text"
+                    }
+                },
+                {
+                    "name": "Trueping Analis",
+                    "desc": "AI analis profesional untuk crypto, saham, forex & trading. Jawaban berdasarkan data Google terbaru.",
+                    "path": "/ai/truepingai-google?q=&tipe=",
+                    "status": "Ready",
+                    "params": {
+                        "tipe": "Jenis analisis: crypto, forex, saham, atau trading",
+                        "q": "Kata kunci pencarian, misalnya: harga bitcoin hari ini"
+                    }
+                },
+                {
+                    "name": "IraaAi",
+                    "desc": "IraaAi adalah ai muslim dengan kecerdasan luar biasa tapi dia memiliki sifat lucu dan jahil",
+                    "path": "/ai/iraaai?text=",
+                    "status": "Ready",
+                    "params": {
+                        "text": "Masukan message"
+                    }
+                },
+                {
+                    "name": "Gemini",
+                    "desc": "Gunakan Ai dari gemini dengan backend dari firebase.com",
+                    "path": "/ai/gemini?text=",
+                    "status": "Ready",
+                    "params": {
+                        "text": "Masukan message"
+                    }
+                },
+                {
+                    "name": "Astra AI",
+                    "desc": "Astra Ai adalah ai simple yang super power",
+                    "path": "/ai/astraai?text=",
+                    "status": "Ready",
+                    "params": {
+                      "text": "Masukan message"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Random",
+            "items": [
+                {
+                    "name": "Blue Archive",
+                    "desc": "Blue Archive Random Images",
+                    "path": "/random/ba",
+                    "status": "Ready"
+                },
+                {
+                    "name": "Waifu",
+                    "desc": "Waifu Random Images",
+                    "path": "/random/waifu",
+                    "status": "Ready"
+                },
+                {
+                    "name": "Kata Islami",
+                    "desc": "Get random quote islami",
+                    "path": "/random/kataislami",
+                    "status": "Ready"
+                },
+                {
+                    "name": "Quote sad",
+                    "desc": "Get random quote sad",
+                    "path": "/random/baskara",
+                    "status": "Ready"
+                },
+                {
+                    "name": "Pic.re",
+                    "desc": "Get random picture from pic.re",
+                    "path": "/random/picre",
+                    "status": "Ready"
+                },
+                {
+                    "name": "Cosplay",
+                    "desc": "Cosplay Random Images",
+                    "path": "/random/cosplay?apikey=",
+                    "status": "Ready",
+                    "params": {
+                        "apikey": "Masukan apikey kamu"
+                    }
+                },
+                {
+                    "name": "Paptt",
+                    "desc": "Random picture 18+",
+                    "path": "/random/paptt?apikey=",
+                    "status": "Ready",
+                    "params": {
+                        "apikey": "Masukan apikey kamu"
+                    }
+                },
+                {
+                    "name": "Quoted Bucin",
+                    "desc": "Random quoted bucin",
+                    "path": "/random/katabucin",
+                    "status": "Ready"
+                },
+                {
+                    "name": "Quoted Motivasi",
+                    "desc": "Random quoted motivasi, metadata by roox",
+                    "path": "/random/motivasi",
+                    "status": "Ready"
+                },
+                {
+                    "name": "Quoted Janganlah",
+                    "desc": "Random quoted janganlah, metadata by roox",
+                    "path": "/random/janganlah",
+                    "status": "Ready"
+                },
+                {
+                    "name": "Yandere",
+                    "desc": "Random picture yandere",
+                    "path": "/random/yandere",
+                    "status": "Ready"
+                },
+                {
+                    "name": "Quotes",
+                    "desc": "Random quotes",
+                    "path": "/random/quotes",
+                    "status": "Ready"         
+                },
+                {
+                    "name": "Motivasi Islam",
+                    "desc": "Random motivasi islam",
+                    "path": "/random/motivasi-islam",
+                    "status": "Ready"   
+                },
+                {
+                    "name": "Motivasi Kristen",
+                    "desc": "Random motivasi kristen",
+                    "path": "/random/motivasi-kristen",
+                    "status": "Ready"       
+                },
+                {
+                    "name": "Nsfw",
+                    "desc": "Random picture 18+",
+                    "path": "/random/nsfw?apikey=",
+                    "status": "Ready",
+                    "params": {
+                        "apikey": "Masukan apikey kamu"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Live",
+            "items": [
+                {
+                    "name": "Live jkt48",
+                    "desc": "Dapatkan informasi live jkt beserta foto dan url",
+                    "path": "/idnlive/jkt48?apikey=",
+                    "status": "Ready",
+                    "params": {
+                        "apikey": "Masukan apikey kamu"
+                    }
+                },
+                {
+                    "name": "Live Radio",
+                    "desc": "Dapatkan informasi radio disekitar negara kamu",
+                    "path": "/live/radio?country=",
+                    "status": "Ready",
+                    "params": {
+                        "country": "Masukan negara kamu"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Info",
+            "items": [
+                {
+                    "name": "Grow A Garden",
+                    "desc": "Dapatkan info dari grow a garden",
+                    "path": "/info/growagarden",
+                    "status": "Ready"
+                },
+                {
+                    "name": "Block Fruits Stock",
+                    "desc": "Dapatkan info dari block fruits stock",
+                    "path": "/info/stock",
+                    "status": "Ready"
+                },
+                {
+                    "name": "Info Gempa",
+                    "desc": "Cek Gempa by bmkg",
+                    "path": "/info/cekgempa",
+                    "status": "Ready"                        
+                },
+                {
+                    "name": "Info Cuaca",
+                    "desc": "Cek Cuaca by bmkg",
+                    "path": "/info/cuaca?kode=",
+                    "status": "Eror",
+                    "params": {
+                        "kode": "Masukan kota kamu contoh KAB.BOGOR"   
+                   }        
+                }
+            ]
+        },
+        {
+            "name": "Tools",
+            "items": [
+                {
+                    "name": "Cek Kode Pos",
+                    "desc": "Cek Kode Pos Di Daerah Kamu",
+                    "path": "/tools/cekkodepos?q=",
+                    "status": "Ready",
+                    "params": {
+                        "q": "Search query"
+                    }
+                },
+                {
+                    "name": "Tinyurl",
+                    "desc": "Ubah long link kamu jadi sortlink",
+                    "path": "/tools/tinyurl?url=",
+                    "status": "Ready",
+                    "params": {
+                        "url": "Masukan url nya"
+                    }
+                },
+                {
+                    "name": "Texs to speech",
+                    "desc": "Ubah kamu jadi suara karakter",
+                    "path": "/tools/text-to-speech?text=",
+                    "status": "Eror",
+                    "params": {
+                        "text": "Masukan Text Nya"
+                    }
+                },
+                {
+                    "name": "Jadwal Shalat",
+                    "desc": "Cek jadwal shalat di kota kamu",
+                    "path": "/tools/jadwalsholat?kota=",
+                    "status": "Eror",
+                    "params": {
+                        "kota": "Masukan Text Nya"
+                    }
+                },
+                {
+                    "name": "Upscale",
+                    "desc": "Yuk hdin foto kamu yang ngeblur itu di zelapioffciall.vercel.app",
+                    "path": "/imagecreator/hdin?image_url=",
+                    "status": "Ready",
+                    "params": {
+                        "image_url": "Masukan Url Foto"
+                    }
+                },
+                {
+                    "name": "Ghibli Style",
+                    "desc": "Yuk ubah foto kamu jadi ghibli di zelapioffciall.vercel.app",
+                    "path": "/imagecreator/toghibli?image_url=",
+                    "status": "Ready",
+                    "params": {
+                        "image_url": "Masukan Url Foto"
+                    }
+                },
+                {
+                    "name": "Text To Qr",
+                    "desc": "Yuk ubah text ke qr di zelapioffciall.vercel.app",
+                    "path": "/tools/text2qr?text=",
+                    "status": "Ready",
+                    "params": {
+                        "text": "Masukan Url Foto"
+                    }
+                },
+                {
+                    "name": "Ngl Spam",
+                    "desc": "Api spam ngl terpercaya anti rate limit",
+                    "path": "/tools/ngl?link=&text=",
+                    "status": "Ready",
+                    "params": {
+                        "link": "Masukan Link Ngl",
+                        "text": "Masukan Pesan"
+                    }
+                },
+                {
+                    "name": "Domain",
+                    "desc": "Cek domain kamu di zelapioffciall.vercel.app",
+                    "path": "/tools/domain?q=",
+                    "status": "Ready",
+                    "params": {
+                        "q": "Masukan Nama Domain"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Image Generator",
+            "items": [
+                {
+                    "name": "Ghibli",
+                    "desc": "Create foto ghibli",
+                    "path": "/imagecreator/text2ghibli?text=",
+                    "status": "Eror",
+                    "params": {
+                        "text": "Masukan Text Nya"                    
+                    }
+                },
+                {
+                    "name": "Nulis",
+                    "desc": "Powered by backend",
+                    "path": "/imagecreator/nulis?text=",
+                    "status": "Ready",
+                    "params": {
+                        "text": "Masukan text"                       
+                    }
+                },
+                {
+                    "name": "Brat",
+                    "desc": "Create sticker brat on whatsapp",
+                    "path": "/imagecreator/bratv2?text=",
+                    "status": "Ready",
+                    "params": {
+                        "text": "Masukan text"
+                    }
+                },
+                {
+                    "name": "Bratanime",
+                    "desc": "Create sticker bratanime on whatsapp",
+                    "path": "/imagecreator/bratanime?text=",
+                    "status": "Ready",
+                    "params": {
+                        "text": "Masukan text"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Search",
+            "items": [
+                {
+                    "name": "Search YouTube",
+                    "desc": "Video search",
+                    "path": "/search/youtube?q=",
+                    "status": "Ready",
+                    "params": {
+                        "q": "Search query"
+                    }
+                },
+                {
+                    "name": "Search YTS",
+                    "desc": "Video search",
+                    "path": "/search/yts?q=",
+                    "status": "Ready",
+                    "params": {
+                        "q": "Search query"
+                    }
+                },
+                {
+                    "name": "Search GsmArena",
+                    "desc": "Cari hape kamu di gsm arena",
+                    "path": "/search/gsmarena?phone=",
+                    "status": "Ready",
+                    "params": {
+                        "phone": "Search phone"
+                    }
+                },
+                {
+                    "name": "Search Cookpad",
+                    "desc": "Cari resep masakan enak di cookpad",
+                    "path": "/search/cookpad?q=",
+                    "status": "Ready",
+                    "params": {
+                        "q": "Search query"
+                    }
+                },
+                {
+                    "name": "Search Jadwaltv",
+                    "desc": "Cari jadwal tv kesukaan kamu secara realtime dengan api dari zelapioffciall.vercel.app",
+                    "path": "/search/jadwaltv?channel=",
+                    "status": "Ready",
+                    "params": {
+                        "channel": "Search jadwtv"
+                    }
+                },
+                {
+                    "name": "Search Happymod",
+                    "desc": "Cari aplikasi mod di happymod.com",
+                    "path": "/search/cookpad?q=",
+                    "status": "Ready",
+                    "params": {
+                        "q": "Search happymod"
+                    }
+                },
+                {
+                    "name": "Search Playstore",
+                    "desc": "Cari aplikasi di playstore dengan lebih cepat",
+                    "path": "/search/playstore?q=",
+                    "status": "Ready",
+                    "params": {
+                        "q": "Search apk"
+                    }
+                },
+                {
+                    "name": "Search Bastation",
+                    "desc": "Cari anime kesukaan mu di aplikasi terpercaya",
+                    "path": "/search/bastation?q=",
+                    "status": "Ready",
+                    "params": {
+                        "q": "Search bastation"
+                    }
+                },
+                {
+                    "name": "Search Npm",
+                    "desc": "Cari module node.js kamu di npm",
+                    "path": "/search/npm?text=",
+                    "status": "Ready",
+                    "params": {
+                        "text": "Search npm"
+                    }
+                },
+                {
+                    "name": "Search TikTok",
+                    "desc": "Cari video lucu dan terpercaya di tiktok",
+                    "path": "/search/tiktok?q=",
+                    "status": "Ready",
+                    "params": {
+                        "q": "Search tiktok"
+                    }
+                },
+                {
+                    "name": "Search Rumah Sakit",
+                    "desc": "Cari rumah sakit terdekat di kota mu",
+                    "path": "/search/rs?kota=",
+                    "status": "Ready",
+                    "params": {
+                        "kota": "Masukan kode penerbangan"
+                    }
+                },
+                {
+                    "name": "Search Google",
+                    "desc": "Cari informasi dari google search",
+                    "path": "/search/google?q=",
+                    "status": "Ready",
+                    "params": {
+                        "q": "Masukan Yang Ingin Di Cari"
+                    }
+                },
+                {
+                    "name": "Search Spotify",
+                    "desc": "Cari music kesukaan kamu di spotify.com",
+                    "path": "/search/spotify?q=",
+                    "status": "Ready",
+                    "params": {
+                        "q": "Search spotify"
+                    }
+                },
+                {
+                    "name": "Search xnxx",
+                    "desc": "Cari hentai/bokep kesukaan kamu di xnxx",
+                    "path": "/search/xnxx?q=&apikey=",
+                    "status": "Ready",
+                    "params": {
+                        "apikey": "Masukan apikey kamu",
+                        "q": "Search xnxx"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Downloader",
+            "items": [
+                {
+                    "name": "Videy Download",
+                    "desc": "Download video dari videy.co jadi lebih mudah",
+                    "path": "/download/videy?url=",
+                    "status": "Ready",
+                    "params": {
+                        "url": "Masukan url"
+                    }
+                },
+                {
+                    "name": "Download All",
+                    "desc": "Backend support with https://r-nozawa.hf.space",
+                    "path": "/download/all?url=",
+                    "status": "Eror",
+                    "params": {
+                        "url": "Masukan url"
+                    }
+                },
+                {
+                    "name": "Threads Download",
+                    "desc": "Download video dari threads jadi lebih mudah",
+                    "path": "/dowmload/thread?url=",
+                    "status": "Eror",
+                    "params": {
+                        "url": "Masukan Url"
+                    }
+                },
+                {
+                    "name": "Instagram Donwload",
+                    "desc": "Download video dari instagram jadi lebih mudah",
+                    "path": "/download/instagram?url=",
+                    "status": "Eror",
+                    "params": {
+                        "url": "Masukan url"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Api Status",
+            "items": [
+                {
+                    "name": "Status Api's",
+                    "desc": "Api monitoring endpoint",
+                    "path": "/api-status/status",
+                    "status": "Ready"
+                },
+                {
+                    "name": "Informasi User",
+                    "desc": "Check your informasition",
+                    "path": "/api-status/informasiuser",
+                    "status": "Ready"
+                }
+            ]
+        }
+    ]
+}

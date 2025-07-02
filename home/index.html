@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ZelApi's Homepage</title>
+  <link rel="icon" href="https://raw.githubusercontent.com/hazelnuttty/Hazel-Api/main/src/icon.png" type="image/png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <!-- Tetap diimport di HTML -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- CSS utama -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- WHATSAPP POPUP -->
+  <div id="popup" class="popup-overlay px-4 backdrop-blur-sm bg-black/40">
+    <div class="bg-[#1e293b]/90 backdrop-blur-md rounded-xl w-full max-w-sm p-5 relative text-center text-white shadow-xl border border-white/10">
+      <button onclick="hidePopup()" aria-label="Close" class="absolute top-3 right-4 text-gray-400 hover:text-gray-200 text-2xl font-bold leading-none">
+        &times;
+      </button>
+      <div class="mb-4">
+        <div class="mx-auto w-12 h-12 border border-green-500 rounded-full flex items-center justify-center">
+          <i class="fab fa-whatsapp text-green-500 text-xl"></i>
+        </div>
+      </div>
+      <h2 class="text-green-400 font-semibold text-lg md:text-xl mb-2 leading-tight">Gabung Saluran WhatsApp!!</h2>
+      <p class="text-gray-300 text-sm mb-5 px-2">
+        Dapatkan info API terbaru, tips & trik, dan diskusi seru langsung di genggamanmu.
+      </p>
+      <button onclick="openWhatsApp()" class="w-full bg-green-600 hover:bg-green-700 transition-colors rounded-md py-2 text-white font-semibold text-base flex items-center justify-center gap-2 mb-3">
+        <i class="fab fa-whatsapp text-lg"></i> Dapatkan Update Fitur
+      </button>
+      <button onclick="hidePopup()" class="w-full border border-gray-600 rounded-md py-2 text-white font-semibold text-base hover:bg-gray-700 transition-colors">
+        Nanti Aja Deh
+      </button>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main class="max-w-5xl mx-auto px-6 py-10">
+    <section class="mb-16" data-aos="fade-up">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
+        <button class="text-white text-sm font-semibold rounded px-4 py-2 shadow-md transition button-primary" type="button">
+          Zel API's
+        </button>
+        <button onclick="location.href='/api-page'" class="text-[var(--secondary-color)] underline font-semibold text-base hover:text-[#3b82f6] transition">
+          Explore Documentation
+        </button>
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-extrabold leading-tight rounded-md p-4 mb-4 shadow gradient-title" data-aos="zoom-in">
+        Simple, Fast, Flawless.
+      </h1>
+      <p class="text-base leading-relaxed mb-6 text-muted max-w-2xl" data-aos="fade-right">
+        ZelApi's Official is a REST API with extremely low bandwidth usage,
+        designed to support all types of software from lightweight scripts
+        to complex applications.
+      </p>
+    </section>
+
+    <hr class="border-gray-300 mb-16" data-aos="fade-up" />
+
+    <section data-aos="fade-up">
+      <h2 class="text-2xl sm:text-3xl font-extrabold rounded-md p-3 inline-block mb-3 shadow gradient-title">
+        Special Thx
+      </h2>
+      <p class="text-base leading-relaxed mb-8 text-muted max-w-xl">
+        The incredible people who made Zel API's possible.
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="zoom-in-up">
+        <div class="rounded-lg shadow p-4 card"><h3 class="font-bold text-lg mb-1 text-[#1e293b]">Putu</h3><p class="text-muted">api.siputzx.my.id</p></div>
+        <div class="rounded-lg shadow p-4 card"><h3 class="font-bold text-lg mb-1 text-[#1e293b]">NovHai</h3><p class="text-muted">velyn.biz.id</p></div>
+        <div class="rounded-lg shadow p-4 card"><h3 class="font-bold text-lg mb-1 text-[#1e293b]">Alfi</h3><p class="text-muted">cloudkuimages.guru</p></div>
+        <div class="rounded-lg shadow p-4 card"><h3 class="font-bold text-lg mb-1 text-[#1e293b]">Nekorinn</h3><p class="text-muted">api.nekorinn.my.id</p></div>
+        <div class="rounded-lg shadow p-4 card"><h3 class="font-bold text-lg mb-1 text-[#1e293b]">Rickyy</h3><p class="text-muted">nirkyy-dev.hf.space</p></div>
+        <div class="rounded-lg shadow p-4 card"><h3 class="font-bold text-lg mb-1 text-[#1e293b]">Zenz</h3><p class="text-muted">zenz.biz.id</p></div>
+        <div class="rounded-lg shadow p-4 card"><h3 class="font-bold text-lg mb-1 text-[#1e293b]">Neko</h3><p class="text-muted">nekobot.xyz</p></div>
+        <div class="rounded-lg shadow p-4 card"><h3 class="font-bold text-lg mb-1 text-[#1e293b]">Metadata</h3><p class="text-muted">Roox And MichaelAgam23</p></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="/script.js"></script>
+</body>
+</html>

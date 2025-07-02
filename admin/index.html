@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>API Key Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://raw.githubusercontent.com/hazelnuttty/Hazel-Api/main/src/icon.png" type="image/png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .scale-up {
+            transform: scale(1);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .scale-up:hover {
+            transform: scale(1.05);
+        }
+
+        .button-transition {
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .button-transition:hover {
+            background-color: #38a169;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="bg-white p-6 rounded-2xl shadow-xl w-full max-w-md fade-in">
+        <h2 class="text-2xl font-bold text-center mb-4">Create API Key</h2>
+        <input
+            type="text"
+            id="nameInput"
+            placeholder="Enter user name"
+            class="w-full p-3 border rounded-xl mb-4 focus:outline-none focus:ring-2 focus:ring-green-500 transition"
+        />
+
+        <button
+            onclick="generateApiKey()"
+            class="w-full bg-green-600 text-white py-2 rounded-xl font-semibold button-transition"
+        >
+            Generate
+        </button>
+
+        <div id="result" class="mt-4 text-center hidden"></div>
+
+        <hr class="my-6" />
+
+        <div>
+            <h3 class="text-lg font-semibold mb-2">API Key History</h3>
+            <ul id="historyList" class="list-disc ml-6 text-sm text-gray-700 space-y-1"></ul>
+        </div>
+    </div>
+
+    <script src="/admin/script.js"></script>
+</body>
+</html>

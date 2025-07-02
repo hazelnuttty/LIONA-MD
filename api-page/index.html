@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Dokumentasi API modern dan antarmuka pengujian yang interaktif. Jelajahi berbagai endpoint API kami dengan mudah.">
+    <meta name="keywords" content="API, Dokumentasi API, REST API, ZEL API, ZEL, Alat Pengembang">
+    <meta name="author" content="ZEL">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zelapioffciall.vercel.app"> <meta property="og:title" content="ZELAPI - Dokumentasi API Modern">
+    <meta property="og:description" content="Jelajahi berbagai endpoint API kami dengan antarmuka yang modern dan mudah digunakan.">
+    <meta property="og:image" content="/src/banner.jpg"> <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://zelapioffciall.vercel.app"> <meta property="twitter:title" content="ZEL API - Dokumentasi API Modern">
+    <meta property="twitter:description" content="Jelajahi berbagai endpoint API kami dengan antarmuka yang modern dan mudah digunakan.">
+    <meta property="twitter:image" content="/src/banner.jpg"> <link rel="icon" href="/src/icon.png" type="image/png"> <title id="page">ZEL API'S </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="/api-page/styles.css"> </head>
+<body>
+    <div id="loadingScreen" role="status" aria-live="polite">
+        <div class="spinner-wrapper">
+            <svg class="spinner-logo" width="80" height="80" viewBox="0 0 100 100" aria-hidden="true">
+                <circle class="spinner-path" cx="50" cy="50" r="40" fill="none" stroke-width="8" />
+                <circle class="spinner-animation" cx="50" cy="50" r="40" fill="none" stroke-width="8" />
+            </svg>
+            <p>Loading<span class="loading-dots">...</span></p>
+          </div>  
+         <h5 class="copyright-text">© 2025 Zelapi Corp. All rights reserved.</h5>
+       </div>
+
+    <aside class="side-nav" id="sideNavigation" aria-label="Navigasi Utama">
+        <div class="side-nav-logo">            
+            <span id="sideNavName">API</span>
+            <div id="versionHeader" class="badge-pill"></div>
+        </div>
+        
+        <nav class="side-nav-links" aria-label="Tautan navigasi">
+            <a href="#home" class="side-nav-link active" aria-current="page">
+                <i class="fas fa-home" aria-hidden="true"></i>
+                <span>Beranda</span>
+            </a>
+            <a href="#apis" class="side-nav-link">
+                <i class="fas fa-plug" aria-hidden="true"></i>
+                <span>API</span>
+            </a>
+            <a href="/dashboard" class="side-nav-link">
+             <i class="fa-solid fa-signal"></i>
+               <span>Stats</span>
+             </a>
+        </nav>
+        
+        <button class="nav-collapse-btn" aria-label="Alihkan navigasi" aria-expanded="false" aria-controls="sideNavigation">
+            <i class="fas fa-angle-left" aria-hidden="true"></i>
+        </button>
+    </aside>
+
+    <div class="main-wrapper">
+        <header class="main-header" role="banner">
+            <button class="menu-toggle" aria-label="Alihkan menu navigasi" aria-expanded="false" aria-controls="sideNavigation">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+            
+            <div class="search-container" role="search">
+                <div class="input-group">
+                    <span class="input-group-text" aria-hidden="true"><i class="fas fa-search"></i></span>
+                    <input type="text" id="searchInput" class="form-control" placeholder="Cari API..." aria-label="Cari API">
+                    <button class="clear-search" id="clearSearch" aria-label="Hapus pencarian">
+                        <i class="fas fa-times" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="header-actions">
+                <button class="notification-bell" id="notificationBell" aria-label="Notifikasi">
+                    <i class="far fa-bell" aria-hidden="true"></i>
+                    <span class="notification-badge" id="notificationBadge" aria-hidden="true"></span>
+                </button>
+            </div>
+        </header>
+        
+        <main id="mainContent">
+            <section id="home" class="hero-section" aria-labelledby="heroHeading">
+                <div class="hero-content">
+                    <div class="hero-heading">
+                        <h1 id="name" class="gradient-text">ZEL API</h1>
+                        <div id="version" class="badge-pill">v1.0</div>
+                    </div>
+                    
+                    <p id="description" class="hero-description">Antarmuka dokumentasi API yang simpel dan mudah disesuaikan.</p>
+                </div>
+                
+                <div class="hero-visual" aria-hidden="true">
+                    <div class="banner-container">
+                        <img id="dynamicImage" class="banner" src="/src/banner.jpg" alt="Banner API">
+                    </div>
+                    <div class="shape shape-1"></div>
+                    <div class="shape shape-2"></div>
+                    <div class="shape shape-3"></div>
+                </div>
+            </section>
+            
+            <section id="apis" class="api-section" aria-labelledby="apiSectionTitle">
+                <h2 id="apiSectionTitle" class="section-title">API yang Tersedia</h2>
+                <p class="section-description">Jelajahi koleksi API kami yang powerful dan mudah digunakan.</p>
+                
+                <div class="tab-content" id="apiContent">
+                    </div>
+            </section>
+        </main>
+        
+        <footer class="main-footer" role="contentinfo">
+            <div class="footer-content">
+                <div id="wm" class="copyright">&copy; 2025 Zelapi Corp. All rights reversed.</div>            
+                
+                <nav class="footer-links" aria-label="Tautan tambahan">
+                    <a href="https://whatsapp.com/channel/0029VbBCUqc5fM5bNGBPgZ2q" target="_blank" rel="noopener noreferrer" class="footer-link">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i> Info
+                    </a>
+                    <a href="https://wa.me/qr/E76CG7ZPEWE3E1" target="_blank" rel="noopener noreferrer" class="footer-link">
+                        <i class="fas fa-envelope" aria-hidden="true"></i> Kontak
+                    </a>
+                </nav>
+            </div>
+        </footer>
+    </div>
+
+    <div class="modal fade" id="apiResponseModal" tabindex="-1" aria-labelledby="apiResponseModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" id="modalDialog" role="document">
+            <div class="modal-content">
+                <header class="modal-header">
+                    <div>
+                        <h3 class="modal-title" id="apiResponseModalLabel">Nama API</h3>
+                        <p class="modal-desc mb-0" id="apiResponseModalDesc">Deskripsi API.</p>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup">
+                        <i class="fas fa-times" aria-hidden="true"></i>
+                    </button>
+                </header>
+                <div class="modal-body">
+                    <section class="endpoint-container" aria-labelledby="endpointLabel">
+                        <div class="endpoint-label">
+                            <span id="endpointLabel">Endpoint</span>
+                            <button class="copy-btn" id="copyEndpoint" title="Salin ke clipboard" aria-label="Salin endpoint">
+                                <i class="far fa-copy" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <pre id="apiEndpoint" class="code-block" tabindex="0"></pre>
+                    </section>
+                    
+                    <div id="apiQueryInputContainer" class="query-input-container">
+                        </div>
+                    
+                    <div id="apiResponseLoading" class="d-none" role="status" aria-live="polite">
+                        <svg class="spinner-logo" width="50" height="50" viewBox="0 0 100 100" aria-hidden="true">
+                            <circle class="spinner-path" cx="50" cy="50" r="40" fill="none" stroke-width="8" />
+                            <circle class="spinner-animation" cx="50" cy="50" r="40" fill="none" stroke-width="8" />
+                        </svg>
+                        <p>Memproses permintaan...</p>
+                    </div>
+                    
+                    <section class="response-container d-none" id="responseContainer" aria-labelledby="responseLabel">
+                        <div class="response-label">
+                            <span id="responseLabel">Respons</span>
+                            <button class="copy-btn" id="copyResponse" title="Salin ke clipboard" aria-label="Salin respons">
+                                <i class="far fa-copy" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <pre id="apiResponseContent" class="code-block d-none" tabindex="0"></pre>
+                    </section>
+                </div>
+                <footer class="modal-footer">
+                    <button id="submitQueryBtn" class="btn btn-primary" disabled>
+                        <span>Kirim</span>
+                        <i class="fas fa-paper-plane ms-2" aria-hidden="true"></i>
+                    </button>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="notificationToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <header class="toast-header">
+                <i class="toast-icon fas fa-info-circle me-2" aria-hidden="true"></i>
+                <strong class="me-auto toast-title">Notifikasi</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Tutup"></button>
+            </header>
+            <div class="toast-body">
+                Ini adalah pesan notifikasi.
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/api-page/script.js"></script> </body>
+</html>

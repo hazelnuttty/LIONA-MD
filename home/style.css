@@ -1,0 +1,68 @@
+:root {
+        --primary-color: #7f61ff;
+        --primary-hover: #6e54e6;
+        --secondary-color: #5ce1e6;
+        --accent-color: #00cec9;
+        --success-color: #00b894;
+        --error-color: #ff7675;
+        --warning-color: #fdcb6e;
+
+        --background-color: #f9fbff;
+        --card-background: #ffffff;
+        --text-color: #2c3e50;
+        --text-muted: #7f8c8d;
+        --border-color: rgba(0, 0, 0, 0.06);
+        --highlight-color: rgba(127, 97, 255, 0.1);
+        --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        --hover-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: var(--background-color);
+        color: var(--text-color);
+      }
+
+      .popup-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 50;
+      }
+
+      .gradient-title {
+        background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+        color: var(--text-color);
+      }
+
+      .button-primary {
+        background-color: var(--primary-color);
+        color: white;
+      }
+
+      .button-primary:hover {
+        background-color: var(--primary-hover);
+      }
+
+      .button-secondary {
+        border: 1px solid #ccc;
+        color: white;
+        background-color: transparent;
+      }
+
+      .button-secondary:hover {
+        background-color: #374151;
+      }
+
+      .card {
+        background-color: var(--card-background);
+        box-shadow: var(--card-shadow);
+      }
+
+      .text-muted {
+        color: var(--text-muted);
+      }
