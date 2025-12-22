@@ -1,4 +1,4 @@
-[![Hazelnuts](./assets/liona.jpg)](https://zelapioffciall.koyeb.app)
+[![Hazelnuts](./media/image.jpg)](https://zelapioffciall.koyeb.app)
 <p align="center">
   <img src="https://img.shields.io/badge/-Node.js-339933?style=flat&logo=nodedotjs&logoColor=white" alt="2">
   <img src="https://img.shields.io/badge/Telegram-26A5E4?style=flat&logo=telegram&logoColor=white" alt="0">
