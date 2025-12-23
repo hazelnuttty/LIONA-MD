@@ -1,5 +1,6 @@
 const fs = require('fs')
 const path = require('path')
+const config = require('../config.js')
 
 module.exports = {
   name: 'plugins',
@@ -7,6 +8,10 @@ module.exports = {
   category: 'owner',
   description: 'Add / Delete / Get plugin',
   async execute(bot, msg, args) {
+    if (msg.from.id !== config.ownerId) {
+      return bot.sendMessage(msg.chat.id, 'Owner only.')
+    }
+
     const chatId = msg.chat.id
     const pluginsDir = __dirname
 

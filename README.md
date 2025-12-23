@@ -7,9 +7,10 @@
 </p>
 
 ---
-**WHY CHOOSE LIONA-MD?**
+#WHY CHOOSE LIONA-MD?
 
-Liona is a telegram bot with a cjs plugin type that is very easy for beginner developers, Liona itself has been integrated with scrape and API.
+**Liona is a telegram bot with a cjs plugin type that is very easy for beginner developers, Liona itself has been integrated with scrape and API.**
+
 ---
 **HOW TO RUN LIONA-MD**
 ```
@@ -24,8 +25,24 @@ mv liona-md/* liona-md/.[!.]* liona-md/..?* /root/
 npm install
 npm start //FYI before you run, change the token and owner ID in config.js first.
 ```
+```
+// IN TERMUX 
+
+pkg update && pkg upgrade
+pkg install git nodejs -y
+git clone https://github.com/hazenuttty/LIONA-MD
+cd LIONA-MD
+npm install
+# CHANGE config.js FIRST
+npm start
 ---
 **EXAMPLE CODE**
+```
+---
+#CODE EXPLANATION 
+**So that you know how to modify liona-md, I will explain several simple functions in liona-md.**
+---
+#SCRAPER FUNCTION 
 ```
 // EXAMPLE OF CALLING THE SCRAPER FUNCTION
 
@@ -42,6 +59,7 @@ module.exports = {
   }
 }
 ```
+#API PROVIDER CALL
 ``` 
 // API PROVIDER CALL EXAMPLE
 
@@ -82,8 +100,53 @@ module.exports = {
   }
 }
 ```
+#CALLING OWNER FUNCTION
+```
+// OWNER CALL FUNCTION
+const config = require('../config.js');
+
+module.exports = {
+  name: 'eval',
+  aliases: ['ev'],
+  category: 'owner',
+  async execute(bot, msg, args) {
+    if (msg.from.id !== config.ownerId) { // OWNER CALL FUNCTION
+      return bot.sendMessage(msg.chat.id, 'Owner only.');
+    }
+
+    if (!args.length) {
+      return bot.sendMessage(msg.chat.id, 'Kode?');
+    }
+
+    try {
+      const code = args.join(' ');
+      let result = eval(code);
+      
+      if (result && typeof result.then === 'function') {
+        result = await result;
+      }
+
+      let output = result;
+      if (typeof result === 'object') {
+        output = JSON.stringify(result, null, 2);
+      }
+
+      return bot.sendMessage(msg.chat.id, `Result:\n\`\`\`javascript\n${output}\n\`\`\``, { parse_mode: 'Markdown' });
+    } catch (error) {
+      return bot.sendMessage(msg.chat.id, `Error:\n\`\`\`javascript\n${error}\n\`\`\``, { parse_mode: 'Markdown' });
+    }
+  }
+};
+```
+``` 
+// OTHER EXAMPLE CODE
+
+print.error("SISTEM ERROR") //CONSOLE.LOG REPLACEMENT
+bot.skoleAi //SCRAPER SYSTEM CALL EXAMPLE
+${apiProvider}/ai/claila?text= //API CALL EXAMPLE
+```
 ---
-**SYSTEM STRUCTURE**
+#SYSTEM STRUCTURE
 ```
 ├── config.js //CONFIG/FILE SETTING FUNCTION
 ├── index.js //MAIN FILE
@@ -120,4 +183,5 @@ module.exports = {
 ```
 ---
 **CONTACT DEVELOPER**
+
 • t.me/hazeloffc

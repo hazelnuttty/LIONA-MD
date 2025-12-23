@@ -1,6 +1,6 @@
 const os = require('os');
-const config = require('../../config.js');
-const print = require('../../lib/print.js');
+const config = require('../config.js');
+const print = require('../lib/print.js');
 
 module.exports = {
   name: 'runtime',

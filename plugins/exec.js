@@ -1,5 +1,5 @@
 const { exec } = require('child_process');
-const config = require('../../config.js');
+const config = require('../config.js');
 
 module.exports = {
   name: 'exec',

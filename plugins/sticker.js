@@ -2,8 +2,8 @@ const axios = require('axios');
 const fs = require('fs');
 const path = require('path');
 const sharp = require('sharp');
-const config = require('../../config.js');
-const print = require('../../lib/print.js');
+const config = require('../config.js');
+const print = require('../lib/print.js');
 
 module.exports = {
   name: 'sticker',
