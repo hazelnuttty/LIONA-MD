@@ -7,12 +7,14 @@
 </p>
 
 ---
-#WHY CHOOSE LIONA-MD?
+
+# WHY CHOOSE LIONA-MD?
 
 **Liona is a telegram bot with a cjs plugin type that is very easy for beginner developers, Liona itself has been integrated with scrape and API.**
 
 ---
-**HOW TO RUN LIONA-MD**
+
+# HOW TO RUN LIONA-MD
 ```
 // IN VPS
 
@@ -39,10 +41,14 @@ npm start
 **EXAMPLE CODE**
 ```
 ---
-#CODE EXPLANATION 
+
+# CODE EXPLANATION 
 **So that you know how to modify liona-md, I will explain several simple functions in liona-md.**
+
 ---
-#SCRAPER FUNCTION 
+
+# SCRAPER FUNCTION 
+
 ```
 // EXAMPLE OF CALLING THE SCRAPER FUNCTION
 
@@ -59,7 +65,8 @@ module.exports = {
   }
 }
 ```
-#API PROVIDER CALL
+
+# API PROVIDER CALL
 ``` 
 // API PROVIDER CALL EXAMPLE
 
@@ -100,9 +107,11 @@ module.exports = {
   }
 }
 ```
-#CALLING OWNER FUNCTION
+
+# CALLING OWNER FUNCTION
 ```
 // OWNER CALL FUNCTION
+
 const config = require('../config.js');
 
 module.exports = {
@@ -145,8 +154,10 @@ print.error("SISTEM ERROR") //CONSOLE.LOG REPLACEMENT
 bot.skoleAi //SCRAPER SYSTEM CALL EXAMPLE
 ${apiProvider}/ai/claila?text= //API CALL EXAMPLE
 ```
+
 ---
-#SYSTEM STRUCTURE
+
+# SYSTEM STRUCTURE
 ```
 ├── config.js //CONFIG/FILE SETTING FUNCTION
 ├── index.js //MAIN FILE
@@ -182,6 +193,6 @@ ${apiProvider}/ai/claila?text= //API CALL EXAMPLE
     └── turnitin.js
 ```
 ---
-**CONTACT DEVELOPER**
+# CONTACT DEVELOPER 
 
 • t.me/hazeloffc
