@@ -6,19 +6,23 @@
   <img src="https://img.shields.io/badge/Node-Telegram_API-339933?style=flat&logo=nodedotjs&logoColor=white" alt="5">
 </p>
 
-#Overview
+# Overview
 
 Liona-MD is a modular Telegram bot framework built with Node.js, designed for simplicity and extensibility. It features a CommonJS plugin architecture that makes it accessible for beginner developers while providing powerful scraping capabilities and API integration for advanced users. The framework emphasizes clean code organization and developer-friendly patterns.
 
-#Features
+# Features
 
 · Plugin-Based Architecture: Easily extendable through CJS modules
+
 · Built-in Scraping Functions: Pre-configured web scraping utilities
+
 · API Integration: Seamless connection to external services
+
 · Developer-Friendly: Clear code structure with comprehensive examples
+
 · Cross-Platform: Compatible with VPS and Termux environments
 
-#Installation and Setup
+# Installation and Setup
 
 **VPS Deployment**
 
@@ -56,7 +60,7 @@ npm install
 npm start
 ```
 
-#Framework Architecture
+# Framework Architecture
 
 **Core Structure**
 
@@ -79,7 +83,7 @@ npm start
 └── src/main.js         # Main bot logic
 ```
 
-#Code Patterns and Usage
+# Code Patterns and Usage
 
 **Scraper Function Integration**
 
@@ -101,7 +105,7 @@ module.exports = {
 }
 ```
 
-#API Provider Integration
+# API Provider Integration
 
 External API calls utilize the centralized configuration:
 
@@ -140,7 +144,7 @@ module.exports = {
 }
 ```
 
-#Owner-Only Commands
+# Owner-Only Commands
 
 Restrict commands to the bot owner using configuration-based validation:
 
@@ -192,13 +196,15 @@ module.exports = {
 };
 ```
 
-#Utility Functions
+# Utility Functions
 
 · print.error("message"): Enhanced error logging with contextual information
+
 · bot.skoleAI: Access scraping functions directly from bot instance
+
 · ${config.apiProvider}/endpoint: Centralized API endpoint configuration
 
-#Plugin Development
+# Plugin Development
 
 **Plugin Structure**
 Each plugin in the plugins/ directory should export an object with the following properties:
@@ -215,15 +221,18 @@ module.exports = {
 }
 ```
 
-#Available Modules.
+# Available Modules.
 The framework provides several utility modules:
 
 · Scraping (scrape/): Web scraping utilities for various services
+
 · Functions (function/): Reusable helper functions and group management
+
 · Libraries (lib/): Core framework functionality
+
 · Plugins (plugins/): User-extensible command modules
 
-#Configuration
+# Configuration
 
 Edit config.js to set up your bot:
 
@@ -236,25 +245,31 @@ module.exports = {
 };
 ```
 
-#Best Practices
+# Best Practices
 
 1. Error Handling: Always wrap API calls in try-catch blocks
+
 2. Input Validation: Validate user input before processing
+
 3. Resource Management: Properly handle file streams and network connections
+
 4. Code Organization: Place related functionality in appropriate directories
+
 5. Documentation: Comment complex logic for maintainability
 
-#Troubleshooting
+# Troubleshooting
 
 · Ensure Node.js version 14 or higher is installed
+
 · Verify bot token and API endpoints in config.js
+
 · Check network connectivity for API calls
+
 · Review console logs using print.error() for debugging
 
-#Support
+# Support
 
-For technical support and development questions, contact the developer:
-
+**For technical support and development questions, contact the developer:**
 Telegram: @hazeloffc
 
 ---
