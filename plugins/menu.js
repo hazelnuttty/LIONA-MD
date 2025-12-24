@@ -29,11 +29,11 @@ RUNTIME : ${runtime}
         { text: 'Start', callback_data: 'menubutton' }
       ],
       [
-        { text: 'Channel WA', url: 'https://whatsapp.com/channel/0029VarFmXW4Spk7e033IG0W' }
+        { text: 'Channel WA', url: 'https://whatsapp.com/channel/0029Vb4HHTJFCCoYgkMjn93K' }
       ],
       [
         { text: 'Developer', url: 'https://t.me/hazeloffc' },
-        { text: 'Github', url: 'https://github.com/hazeloffc' }
+        { text: 'Github', url: 'https://github.com/hazelnuttty' }
       ]
     ];
 

@@ -1,3 +1,5 @@
+const fs = require('fs');
+const path = require('path');
 const db = require('../lib/database.js');
 const config = require('../config.js');
 
@@ -13,7 +15,7 @@ async function isChatAdmin(bot, chat, userId) {
 
 function generateSettings(chatId) {
     const chatConfig = db.getChatConfig(chatId);
-    
+
     const text = `*Group Settings for this chat*
 
 - Anti-Link: ${chatConfig.antiLink ? '✅ On' : '❌ Off'}
@@ -46,7 +48,7 @@ module.exports = {
     category: 'group',
     description: 'Manage group settings via interactive buttons.',
     async execute(bot, msg, args) {
-        const { chat, from } = msg;
+        const { chat, from, message_id } = msg;
 
         if (chat.type === 'private') {
             return bot.sendMessage(chat.id, 'This command can only be used in groups.');
@@ -85,14 +87,17 @@ module.exports = {
             if (changed) {
                 db.updateChatConfig(chat.id, chatConfig);
                 const { text, keyboard } = generateSettings(chat.id);
+                const mediaPath = path.join(__dirname, '../media/image.jpg');
+                const options = { parse_mode: 'Markdown', reply_markup: { inline_keyboard: keyboard } };
+
                 try {
-                    await bot.editMessageText(text, {
-                        chat_id: chat.id,
-                        message_id: msg.message_id,
-                        parse_mode: 'Markdown',
-                        reply_markup: { inline_keyboard: keyboard }
-                    });
+                    if (fs.existsSync(mediaPath)) {
+                        await bot.sendPhoto(chat.id, mediaPath, { caption: text, ...options });
+                    } else {
+                        await bot.sendMessage(chat.id, text, options);
+                    }
                 } catch (e) {
+                    await bot.sendMessage(chat.id, text, options);
                 }
             }
             return;
@@ -110,11 +115,17 @@ module.exports = {
         }
 
         const { text, keyboard } = generateSettings(chat.id);
-        await bot.sendMessage(chat.id, text, {
-            parse_mode: 'Markdown',
-            reply_markup: {
-                inline_keyboard: keyboard
+        const mediaPath = path.join(__dirname, '../media/image.jpg');
+        const options = { parse_mode: 'Markdown', reply_markup: { inline_keyboard: keyboard } };
+
+        try {
+            if (fs.existsSync(mediaPath)) {
+                await bot.sendPhoto(chat.id, mediaPath, { caption: text, ...options });
+            } else {
+                await bot.sendMessage(chat.id, text, options);
             }
-        });
+        } catch (e) {
+            await bot.sendMessage(chat.id, text, options);
+        }
     }
 };
