@@ -28,7 +28,7 @@ Mode saat ini: *${config.botMode}*`, { parse_mode: 'Markdown' });
 
     config.botMode = newMode;
 
-    const configPath = path.join(__dirname, '../../config.js');
+    const configPath = path.resolve(__dirname, '../config.js');
     try {
       let configData = fs.readFileSync(configPath, 'utf8');
       configData = configData.replace(/botMode:\s*['"](public|self)['"]/, `botMode: '${newMode}'`);

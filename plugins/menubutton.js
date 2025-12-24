@@ -10,18 +10,20 @@ module.exports = {
   description: 'Menampilkan menu utama bot dengan tombol dinamis',
   async execute(bot, msg) {
     const chatId = msg.chat.id;
-    const mediaPath = path.join(__dirname, '../../media/image.jpg');
+    const mediaPath = path.join(__dirname, '../media/image.jpg');
     const runtime = bot.runtime();
+    const time = bot.time();
     const caption = `
 \`\`\`
-╔─═⊱ MENU BUTTON ─═⬡
-║⎔ Developer : @hazeloffc
-║⎔ Bot Name  : ${config.botName}
-║⎔ Version   : 1.0
-║⎔ Runtime   : ${runtime}
-┗━━━━━━━━━━━━━⬡⬡
+[${time}] LIONA-MD
+───────────────
+NAME : ${config.botName}
+VERSION : ${config.botVersion}
+RUNTIME : ${runtime}
+───────────────
+SELECT BUTTON
 \`\`\`
-`;
+    `; 
 
     const commands = bot.commands;
     const categories = {};

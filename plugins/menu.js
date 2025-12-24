@@ -10,16 +10,17 @@ module.exports = {
   description: 'Menampilkan start bot',
   async execute(bot, msg) {
     const chatId = msg.chat.id;
-    const mediaPath = path.join(__dirname, '../../media/image.jpg');
+    const mediaPath = path.join(__dirname, '../media/image.jpg');
     const runtime = bot.runtime(); 
+    const time = bot.time();
     const caption = `
 \`\`\`
-╔──═⊱ WELCOME ───═⬡
-║⎔ Developer : @hazeloffc
-║⎔ Bot Name  : ${config.botName || 'Telegram Bot'}
-║⎔ Version   : 1.0
-║⎔ Runtime   : ${runtime}
-┗━━━━━━━━━━━━━━⬡⬡
+[${time}] LIONA-MD
+───────────────
+NAME : ${config.botName}
+VERSION : ${config.botVersion}
+RUNTIME : ${runtime}
+───────────────
 \`\`\`
     `; 
     
