@@ -23,7 +23,7 @@ module.exports = {
       const file = await bot.getFile(photo.file_id);
       const fileUrl = `https://api.telegram.org/file/bot${config.token}/${file.file_path}`;
       
-      const tempDir = path.join(__dirname, '../../temp');
+      const tempDir = path.join(__dirname, '../temp');
       if (!fs.existsSync(tempDir)) {
         fs.mkdirSync(tempDir);
       }

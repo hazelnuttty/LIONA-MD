@@ -1,12 +1,12 @@
 const { exec } = require('child_process');
-const config = require('../config.js');
+const { isOwner } = require('../lib/owner.js');
 
 module.exports = {
   name: 'exec',
   aliases: ['shell', 'sh'],
   category: 'owner',
   async execute(bot, msg, args) {
-    if (msg.from.id !== config.ownerId) {
+    if (!isOwner(msg.from.id)) {
       return bot.sendMessage(msg.chat.id, 'Owner only.');
     }
 

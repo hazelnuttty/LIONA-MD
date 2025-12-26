@@ -1,9 +1,8 @@
 [![Hazelnuts](./media/image.jpg)](https://zelapioffciall.koyeb.app)
 <p align="center">
-  <img src="https://img.shields.io/badge/-Node.js-339933?style=flat&logo=nodedotjs&logoColor=white" alt="2">
-  <img src="https://img.shields.io/badge/Telegram-26A5E4?style=flat&logo=telegram&logoColor=white" alt="0">
-  <img src="https://img.shields.io/badge/npm_Package-CB3837?style=flat&logo=npm&logoColor=white" alt="2">
-  <img src="https://img.shields.io/badge/Node-Telegram_API-339933?style=flat&logo=nodedotjs&logoColor=white" alt="5">
+  <img src="https://img.shields.io/badge/-Node.js-339933?style=flat&logo=nodedotjs&logoColor=white" alt="Node.js">
+  <img src="https://img.shields.io/badge/Telegram-26A5E4?style=flat&logo=telegram&logoColor=white" alt="Telegram">
+  <img src="https://img.shields.io/badge/npm_Package-CB3837?style=flat&logo=npm&logoColor=white" alt="NPM">
 </p>
 
 # Overview
@@ -12,266 +11,187 @@ Liona-MD is a modular Telegram bot framework built with Node.js, designed for si
 
 # Features
 
-· Plugin-Based Architecture: Easily extendable through CJS modules
+- **Plugin-Based Architecture**: Easily extendable through CJS modules.
+- **Built-in Scraping Functions**: Pre-configured web scraping utilities.
+- **API Integration**: Seamless connection to external services.
+- **Group Management**: Built-in features for anti-link, anti-image, anti-spam, and welcome messages.
+- **Developer-Friendly**: Clear code structure with comprehensive examples.
+- **Cross-Platform**: Compatible with VPS and Termux environments.
 
-· Built-in Scraping Functions: Pre-configured web scraping utilities
+# VERSION 1.0.2
 
-· API Integration: Seamless connection to external services
-
-· Developer-Friendly: Clear code structure with comprehensive examples
-
-· Cross-Platform: Compatible with VPS and Termux environments
+- **FIX BUG ON BUTTON /SETTING**: Everyone can't use the button except admin and owner.
+- **ADDED BOT FEATURE**: It allows everyone to use this script without having to have a VPS.
+- **FIX BUG IN HENDLER.JS**: We have fixed handler.js so that it can be used simply.
+- **ADDITION OF TWO OR MORE OWNERS SYSTEM**: This system allows bots to be handled by more than 1 owner.
+- **FIX BUG IN STICKER.JS**: We have fixed the error "Error: EROFS: read-only file".
 
 # Installation and Setup
 
 **VPS Deployment**
-
 ```bash
 # Update system and install dependencies
-sudo apt update
-sudo apt upgrade
-sudo apt install git -y
+sudo apt update && sudo apt upgrade
+sudo apt install -y git nodejs npm
 
 # Clone repository and setup
-git clone https://github.com/hazenuttty/liona-md
+git clone https://github.com/hazenuttty/liona-md.git
 cd liona-md
-mv liona-md/* liona-md/.[!.]* liona-md/..?* /root/
 
-# Install dependencies and configure
+# Install dependencies and start
 npm install
-# Configure token and owner ID in config.js before starting
 npm start
 ```
 
 **Termux Deployment (Android)**
-
 ```bash
 # Update packages and install requirements
 pkg update && pkg upgrade
-pkg install git nodejs -y
+pkg install -y git nodejs
 
 # Clone and setup
-git clone https://github.com/hazenuttty/LIONA-MD
+git clone https://github.com/hazenuttty/LIONA-MD.git
 cd LIONA-MD
 npm install
 
-# Configure and launch
-# Edit config.js to set your token and owner ID
+# Launch the bot
 npm start
 ```
+*On the first run, the bot will prompt you to enter your Bot Token and Owner ID.*
 
 # Framework Architecture
 
 **Core Structure**
-
 ```
-├── config.js              # Configuration file (bot token, API endpoints)
-├── index.js              # Application entry point
-├── lib/                  # Core libraries
-│   ├── handler.js       # Command and event handler
-│   ├── print.js         # Enhanced logging utilities
-│   ├── database.js      # Database abstraction layer
-│   ├── cache.js         # Caching mechanisms
-│   ├── autoReload.js    # Plugin hot-reload functionality
-│   └── login.js         # Authentication management
-├── plugins/              # Command plugins directory
-├── scrape/              # Web scraping modules
-├── function/            # Utility functions
-│   ├── _group.js       # Group management utilities
-│   └── helper.js       # General helper functions
-├── database/            # Database configuration
-└── src/main.js         # Main bot logic
+.
+.
+|-- README.md
+|-- config.js
+|-- database
+|   |-- config.js
+|   `-- config.json
+|-- function
+|   |-- _group.js
+|   |-- _jadibot.js
+|   `-- helper.js
+|-- index.js
+|-- lib
+|   |-- autoReload.js
+|   |-- cache.js
+|   |-- database.js
+|   |-- handler.js
+|   |-- handlerJadBot.js
+|   |-- jadibotDatabase.js
+|   |-- login.js
+|   |-- owner.js
+|   `-- print.js
+|-- media
+|   |-- @hazeloffc
+|   `-- image.jpg
+|-- package.json
+|-- plugins
+|   |-- add.js
+|   |-- addowner.js
+|   |-- antiimage.js
+|   |-- antilink.js
+|   |-- ban.js
+|   |-- cekowner.js
+|   |-- claila.js
+|   |-- delowner.js
+|   |-- demote.js
+|   |-- donghua.js
+|   |-- eval.js
+|   |-- exec.js
+|   |-- get.js
+|   |-- hadist.js
+|   |-- hadistdetail.js
+|   |-- hubble.js
+|   |-- im.js
+|   |-- jadwalsholat.js
+|   |-- kick.js
+|   |-- menu.js
+|   |-- menubutton.js
+|   |-- ping.js
+|   |-- plugins.js
+|   |-- promote.js
+|   |-- runtime.js
+|   |-- schoolhub.js
+|   |-- sertifikat.js
+|   |-- setmode.js
+|   |-- shionai.js
+|   |-- sticker.js
+|   |-- tiktokmp3.js
+|   |-- turnitin.js
+|   `-- unban.js
+|-- scrape
+|   |-- baiduSearch.js
+|   |-- detailHadist.js
+|   |-- donghuaSchedule.js
+|   |-- getPrayerSchedule.js
+|   |-- hadist.js
+|   |-- hubbleDetail.js
+|   |-- hubbleSearch.js
+|   |-- searchPrayerCity.js
+|   |-- skoleAI.js
+|   |-- tiktokmp3.js
+|   `-- turnitin.js
+|-- sessions
+`-- src
+    `-- main.js
 ```
 
 # Code Patterns and Usage
 
-**Scraper Function Integration**
-
-Liona-MD includes built-in scraping functions accessible through the bot instance:
-
+### Scraper Function Integration
+Liona-MD includes built-in scraping functions accessible through the `bot` instance:
 ```javascript
+// plugins/exampleScraper.js
 module.exports = {
   name: 'skoleai',
   aliases: ['ai'],
   async execute(bot, msg, args) {
-    const chatId = msg.chat.id;
     const question = args.join(' ');
-    if (!question) return bot.sendMessage(chatId, 'Please provide a question');
+    if (!question) return bot.sendMessage(msg.chat.id, 'Please provide a question');
     
     // Access scraper function via bot instance
     const response = await bot.skoleAI(question);
-    bot.sendMessage(chatId, response);
+    bot.sendMessage(msg.chat.id, response);
   }
 }
 ```
 
-# API Provider Integration
+### Group Management
+Group settings are managed via the `/setting` command, which provides an interactive button menu for admins.
+- **/setting**: Shows the main settings menu.
+- **/setting setwelcome &lt;message&gt;**: Sets a custom welcome message. Use `{user}` for the user's mention and `{group}` for the group's name.
+- **/kick**: To remove members.
+- **/setting setleave &lt;message&gt;**: Sets a custom leave message when a member leaves the group. Use `{user}` for the user's mention and `{group}` for the group name.
 
-External API calls utilize the centralized configuration:
-
+### Owner-Only Commands
+Restrict commands to the bot owner using a simple validation check against `config.js`.
 ```javascript
-const axios = require('axios');
-const print = require('../lib/print.js');
-const config = require('../config.js');
-
-module.exports = {
-  name: 'certificate',
-  aliases: [],
-  category: 'canvas',
-  description: 'Generate certificate image',
-  async execute(bot, msg, args) {
-    const chatId = msg.chat.id;
-    
-    try {
-      const text = args.join(' ') || 'default text';
-      const url = `${config.apiProvider}/canvas/certificate?text=${encodeURIComponent(text)}`;
-      
-      const response = await axios.get(url, {
-        responseType: 'arraybuffer'
-      });
-      
-      await bot.sendPhoto(
-        chatId,
-        Buffer.from(response.data),
-        { caption: 'Certificate generated' }
-      );
-      
-    } catch (error) {
-      print.error(error, 'Certificate Command');
-      await bot.sendMessage(chatId, 'Error generating certificate');
-    }
-  }
-}
-```
-
-# Owner-Only Commands
-
-Restrict commands to the bot owner using configuration-based validation:
-
-```javascript
+// plugins/eval.js
 const config = require('../config.js');
 
 module.exports = {
   name: 'eval',
-  aliases: ['ev'],
   category: 'owner',
   async execute(bot, msg, args) {
-    // Validate owner identity
-    if (msg.from.id !== config.ownerId) {
+    // Validate owner identity (non-strict check for string/number)
+    if (msg.from.id != config.ownerId) {
       return bot.sendMessage(msg.chat.id, 'This command is restricted to the bot owner.');
     }
-    
-    if (!args.length) {
-      return bot.sendMessage(msg.chat.id, 'Please provide code to evaluate.');
-    }
-    
-    try {
-      const code = args.join(' ');
-      let result = eval(code);
-      
-      // Handle async operations
-      if (result && typeof result.then === 'function') {
-        result = await result;
-      }
-      
-      // Format output based on type
-      let output = result;
-      if (typeof result === 'object') {
-        output = JSON.stringify(result, null, 2);
-      }
-      
-      return bot.sendMessage(
-        msg.chat.id,
-        `Result:\n\`\`\`javascript\n${output}\n\`\`\``,
-        { parse_mode: 'Markdown' }
-      );
-    } catch (error) {
-      return bot.sendMessage(
-        msg.chat.id,
-        `Error:\n\`\`\`javascript\n${error}\n\`\`\``,
-        { parse_mode: 'Markdown' }
-      );
-    }
+    // ... command logic
   }
 };
 ```
-
-# Utility Functions
-
-· print.error("message"): Enhanced error logging with contextual information
-
-· bot.skoleAI: Access scraping functions directly from bot instance
-
-· ${config.apiProvider}/endpoint: Centralized API endpoint configuration
-
-# Plugin Development
-
-**Plugin Structure**
-Each plugin in the plugins/ directory should export an object with the following properties:
-
-```javascript
-module.exports = {
-  name: 'commandname',      // Primary command trigger
-  aliases: ['alias1', 'alias2'], // Alternative triggers
-  category: 'utility',      // Command category for organization
-  description: 'Brief description', // Help text
-  async execute(bot, msg, args) {
-    // Command implementation
-  }
-}
-```
-
-# Available Modules.
-The framework provides several utility modules:
-
-· Scraping (scrape/): Web scraping utilities for various services
-
-· Functions (function/): Reusable helper functions and group management
-
-· Libraries (lib/): Core framework functionality
-
-· Plugins (plugins/): User-extensible command modules
-
-# Configuration
-
-Edit config.js to set up your bot:
-
-```javascript
-module.exports = {
-  botToken: 'YOUR_TELEGRAM_BOT_TOKEN',
-  ownerId: 'YOUR_TELEGRAM_USER_ID',
-  apiProvider: 'https://your-api-provider.com',
-  // Additional configuration options
-};
-```
-
-# Best Practices
-
-1. Error Handling: Always wrap API calls in try-catch blocks
-
-2. Input Validation: Validate user input before processing
-
-3. Resource Management: Properly handle file streams and network connections
-
-4. Code Organization: Place related functionality in appropriate directories
-
-5. Documentation: Comment complex logic for maintainability
-
-# Troubleshooting
-
-· Ensure Node.js version 14 or higher is installed
-
-· Verify bot token and API endpoints in config.js
-
-· Check network connectivity for API calls
-
-· Review console logs using print.error() for debugging
 
 # Support
 
-**For technical support and development questions, contact the developer:**
-Telegram: @hazeloffc
+For technical support and development questions, contact the developer:
+- **Telegram**: [HAZELOFFC](t.me/hazeloffc)
+- **GitHub**: [hazelnuttty](https://github.com/hazelnuttty)
+- **LIONA-MD** [LIONA-MD](t.me/hazeloffc)
 
 ---
-
-Liona-MD is maintained as an open-source project. Contributions and feedback are welcome to improve the framework's capabilities and documentation.
+*Liona-MD is maintained as an open-source project. Contributions and feedback are welcome to improve the framework's capabilities and documentation.*

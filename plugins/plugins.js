@@ -1,6 +1,6 @@
 const fs = require('fs')
 const path = require('path')
-const config = require('../config.js')
+const { isOwner } = require('../lib/owner.js');
 
 module.exports = {
   name: 'plugins',
@@ -8,7 +8,7 @@ module.exports = {
   category: 'owner',
   description: 'Add / Delete / Get plugin',
   async execute(bot, msg, args) {
-    if (msg.from.id !== config.ownerId) {
+    if (!isOwner(msg.from.id)) {
       return bot.sendMessage(msg.chat.id, 'Owner only.')
     }
 
@@ -27,18 +27,18 @@ module.exports = {
     const fileArg = args[1]
 
     if (!fileArg)
-      return bot.sendMessage(chatId, 'nama file plugin mana 😿')
+      return bot.sendMessage(chatId, 'nama file plugin mana')
 
     const fileName = fileArg.endsWith('.js') ? fileArg : `${fileArg}.js`
     const filePath = path.join(pluginsDir, fileName)
 
     if (flag === '--add') {
       if (!msg.reply_to_message || !msg.reply_to_message.text)
-        return bot.sendMessage(chatId, 'reply pesan berisi kode plugin 😭')
+        return bot.sendMessage(chatId, 'reply pesan berisi kode plugin')
 
       const code = msg.reply_to_message.text.trim()
       if (!code)
-        return bot.sendMessage(chatId, 'kodenya kosong 😿')
+        return bot.sendMessage(chatId, 'kodenya kosong')
 
       await bot.sendChatAction(chatId, 'typing')
 
@@ -50,7 +50,7 @@ module.exports = {
 
         bot.sendMessage(
           chatId,
-          `> /plugins --add ${fileName}\n\nplugin *${fileName}* berhasil ditambahkan 💖`,
+          `/plugins --add ${fileName}\n\nplugin *${fileName}* berhasil ditambahkan`,
           { parse_mode: 'Markdown' }
         )
       }, 1200)
@@ -60,27 +60,27 @@ module.exports = {
 
     if (flag === '--del') {
       if (!fs.existsSync(filePath))
-        return bot.sendMessage(chatId, 'plugin tidak ditemukan 😿')
+        return bot.sendMessage(chatId, 'plugin tidak ditemukan')
 
       fs.unlinkSync(filePath)
 
       return bot.sendMessage(
         chatId,
-        `plugin *${fileName}* berhasil dihapus 🗑️`,
+        `plugin *${fileName}* berhasil dihapus`,
         { parse_mode: 'Markdown' }
       )
     }
 
     if (flag === '--get') {
       if (!fs.existsSync(filePath))
-        return bot.sendMessage(chatId, 'plugin tidak ditemukan 😿')
+        return bot.sendMessage(chatId, 'plugin tidak ditemukan')
 
       return bot.sendDocument(chatId, filePath, {
-        caption: `nih plugin *${fileName}* 😼`,
+        caption: `nih plugin *${fileName}*`,
         parse_mode: 'Markdown'
       })
     }
 
-    return bot.sendMessage(chatId, 'flag tidak dikenal 😵\npakai: --add | --del | --get')
+    return bot.sendMessage(chatId, 'flag tidak dikenal\npakai: --add | --del | --get')
   }
 }

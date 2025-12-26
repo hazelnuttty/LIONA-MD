@@ -4,11 +4,11 @@ const bot = require('../lib/login.js');
 const print = require('../lib/print.js');
 const config = require('../config.js');
 const db = require('../lib/database.js');
+const { isOwner } = require('../lib/owner.js');
 
 const helper = require('../function/helper.js');
 
 print.init(bot);
-
 function loadScrapers() {
     const scrapeDir = path.join(__dirname, '..', 'scrape');
     if (!fs.existsSync(scrapeDir)) {
@@ -77,6 +77,7 @@ const commandDirs = [
 loadCommands(commandDirs);
 print.success(`${bot.commands.size} total commands and aliases loaded.`);
 
+bot.db = db;
 require('../lib/handler')(bot);
 const reloadDirs = [
     ...commandDirs,
@@ -86,9 +87,23 @@ const reloadDirs = [
 ];
 require('../lib/autoReload')(reloadDirs, reloadPlugin);
 
+try {
+    const jadibotPlugin = bot.commands.get('jadibot');
+    if (jadibotPlugin && jadibotPlugin.initializeJadibots) {
+        jadibotPlugin.initializeJadibots(bot);
+    }
+} catch (e) {
+    print.error(e, 'Failed to initialize jadibots');
+}
+
 
 bot.on('message', async (msg) => {
     if (!msg.chat || !msg.from) return;
+
+    if (db.isBanned(msg.from.id)) return;
+    if (db.isBanned(msg.chat.id) && !isOwner(msg.from.id)) {
+        return;
+    }
 
     const isModerated = await bot.handleModeration(msg);
     if (isModerated) return;
@@ -110,7 +125,7 @@ bot.on('message', async (msg) => {
 
     if (!command) return;
 
-    if (config.botMode === 'self' && from.id !== config.ownerId) {
+    if (config.botMode === 'self' && !isOwner(msg.from.id)) {
         return;
     }
 
@@ -124,6 +139,7 @@ bot.on('message', async (msg) => {
 });
 
 bot.on('new_chat_members', (msg) => helper.handleWelcome(bot, msg));
+bot.on('left_chat_member', (msg) => helper.handleLeftChatMember(bot, msg));
 
 process.on('SIGINT', () => {
     print.warn('Bot is stopping...');

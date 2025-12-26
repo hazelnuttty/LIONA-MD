@@ -1,3 +1,4 @@
+const { isOwner } = require('../lib/owner.js');
 const config = require('../config.js');
 
 module.exports = {
@@ -5,7 +6,7 @@ module.exports = {
   aliases: ['ev'],
   category: 'owner',
   async execute(bot, msg, args) {
-    if (msg.from.id !== config.ownerId) {
+    if (!isOwner(msg.from.id)) {
       return bot.sendMessage(msg.chat.id, 'Owner only.');
     }
 
@@ -15,7 +16,10 @@ module.exports = {
 
     try {
       const code = args.join(' ');
-      let result = eval(code);
+      const db = bot.db; 
+      let result = await (async (bot, msg, args, config, db) => {
+        return await eval(code);
+      })(bot, msg, args, config, db);
       
       if (result && typeof result.then === 'function') {
         result = await result;

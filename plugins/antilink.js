@@ -1,5 +1,4 @@
-const db = require('../lib/database.js');
-const config = require('../config.js');
+const { isOwner } = require('../lib/owner.js');
 
 module.exports = {
   name: 'antilink',
@@ -7,8 +6,9 @@ module.exports = {
   description: 'Enable or disable anti-link feature for this chat.',
   async execute(bot, msg, args) {
     const { chat, from } = msg;
+    const db = bot.db;
 
-    if (from.id !== config.ownerId) {
+    if (!isOwner(from.id)) {
       return bot.sendMessage(chat.id, 'This command is for the owner only.');
     }
 
