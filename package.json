@@ -1,0 +1,37 @@
+{
+  "name": "LIONA-MD",
+  "version": "1.0.1",
+  "description": "LIONA-MD - Telegram bot multi device",
+  "author": "Hazel",
+  "keywords": [
+    "telegram-bot",
+    "telegram",
+    "bot",
+    "liona-md",
+    "nodejs",
+  "commonjs",
+    "switch-case",
+    "automation",
+    "chatbot"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@google/genai": "*",
+    "axios": "*",
+    "bcrypt": "^5.1.1",
+    "canvas": "*",
+    "chalk": "^4.1.2",
+    "cheerio": "*",
+    "chokidar": "*",
+    "form-data": "*",
+    "moment": "^2.30.1",
+    "node-telegram-bot-api": "^0.63.0",
+    "os": "*",
+    "path": "*",
+    "sharp": "*",
+    "yt-search": "*"
+  }
+}
