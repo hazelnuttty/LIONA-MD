@@ -6,10 +6,10 @@ const config = require('../config.js');
 const db = require('../lib/database.js');
 const { isOwner } = require('../lib/owner.js');
 const { getAiResponse } = require('../lib/_AutoAi.js');
-
 const helper = require('../function/helper.js');
 
 print.init(bot);
+
 
 function loadScrapers() {
     const scrapeDir = path.join(__dirname, '..', 'scrape');

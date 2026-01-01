@@ -13,7 +13,7 @@
 
 Liona-MD is a modular Telegram bot framework built with Node.js, designed for simplicity and extensibility. It features a CommonJS plugin architecture that makes it accessible for beginner developers while providing powerful scraping capabilities and API integration for advanced users. The framework emphasizes clean code organization and developer-friendly patterns.
 
-### Version 1.0.3 Release Notes
+### Version 1.0.4 Release Notes
 
 This version introduces significant enhancements to the AI capabilities, security, and overall user experience.
 
@@ -22,6 +22,12 @@ This version introduces significant enhancements to the AI capabilities, securit
 - **Automatic Bot Updates**: The bot now includes a self-updating mechanism that pulls the latest changes from the GitHub repository, ensuring you're always running the most recent version.
 - **Report Command**: A utility command that forwards user reports to the bot owner. It gathers the sender's identity and message content, sends the report to all owner accounts defined in the configuration, and returns a confirmation message to the user.
 - **Configurable Leave Messages**: In addition to welcome messages, you can now set custom messages for when a user leaves a group using the `/setting setleave <message>` command.
+- **Agent to Agent System**: A new AutoAI provider called `agent` has been added. Unlike traditional single-model AI, this provider uses a cooperative multi-agent architecture to process requests. The system follows a `planner > thinking > critic > executor` workflow:
+  - **Planner Agent**: Interprets the user's request and creates an initial step-by-step plan.
+  - **Thinking Agent**: Analyzes the user's prompt to generate deeper insights and context, which helps in refining the plan.
+  - **Critic Agent**: Reviews the initial plan and the thinking notes. It refines, corrects, and enhances the plan to ensure it is logical, efficient, and accurately addresses the user's intent.
+  - **Executor Agent**: Executes the final, refined plan from the critic to generate the comprehensive response.
+This multi-step, cooperative architecture improves reasoning quality, reduces errors, and enables the bot to handle more complex and nuanced requests.
 
 ### Security Enhancements
 - **Jadibot Session Encryption**: The security of the `jadibot` feature has been significantly improved. Session files are now encrypted using AES-256 to protect sensitive data like bot tokens and owner IDs.
